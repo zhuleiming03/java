@@ -26,9 +26,8 @@ public class StringTest {
 
         System.out.println("------------ 相加计算 ------------");
 
-        String c = a + " world";
-        String c1 = "Hello world";
-        System.out.println("字面量相加不等于字面量:" + (c == c1));
+        System.out.println("字面量相加等于字面量:" + ("Hello " + "world" == "Hello world"));
+        System.out.println("字面量相加不等于字面量:" + (a + " world" == "Hello world"));
 
         String d = b + new String(" world");
         String d1 = new String("Hello world");
