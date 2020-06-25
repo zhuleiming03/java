@@ -19,4 +19,13 @@
     <delete id="delete" parameterType="java.lang.Integer">
         delete t_customer where id=#{id}
     </delete>
+
+    <update id="create" >
+        drop table if exists t_customer;
+        create table `t_customer` (
+          `id` int not null auto_increment primary key,
+          `name` varchar(10) null,
+          `amount` float null
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+    </update>
 </mapper>

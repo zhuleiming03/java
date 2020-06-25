@@ -24,6 +24,10 @@ public class CrudTest {
 
             CustomerMapper customerMapper = sqlSession.getMapper(CustomerMapper.class);
 
+            // 创建表 多条语句执行 需要在连接后缀加上 allowMultiQueries=true
+            customerMapper.create();
+            sqlSession.commit();
+
             // 新增对象 修改数据(增删改)需要 commit
             Customer customer = new Customer();
             customer.setName("Janey");
