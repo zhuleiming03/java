@@ -22,14 +22,14 @@ public class Index {
         Statement statement = connection.createStatement();
 
         // 5 执行 SQL
-        String sql = "select * from t_user where id in (1,2,3)";
+        String sql = "select * from t_customer where id in (1,2,3)";
         ResultSet resultSet = statement.executeQuery(sql);
 
         while (resultSet.next()) {
-            System.out.println(String.format("id: %s , name: %s , balance: %s ",
+            System.out.println(String.format("id: %s , name: %s , amount: %s ",
                     resultSet.getObject("id"),
                     resultSet.getObject("name"),
-                    resultSet.getObject("balance")));
+                    resultSet.getObject("amount")));
         }
 
         // 6 释放连接
