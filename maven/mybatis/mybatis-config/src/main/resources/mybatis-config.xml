@@ -5,6 +5,11 @@
     <!-- 配置数据库账号密码 -->
     <properties resource="db.properties" />
 
+    <!--配置日志工厂-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
     <!-- 别名 mybatis.pojo 下的对象不用带包名 类名建议小写开头 如：customer-->
     <typeAliases>
         <package name="mybatis.pojo"/>
