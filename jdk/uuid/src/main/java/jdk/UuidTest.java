@@ -1,3 +1,5 @@
+package jdk;
+
 import java.util.UUID;
 
 public class UuidTest {
