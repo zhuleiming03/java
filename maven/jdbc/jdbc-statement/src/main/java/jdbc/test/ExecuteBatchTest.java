@@ -1,4 +1,6 @@
-import util.JdbcUtil;
+package jdbc.test;
+
+import jdbc.util.JdbcUtil;
 
 import java.sql.Connection;
 import java.sql.Statement;

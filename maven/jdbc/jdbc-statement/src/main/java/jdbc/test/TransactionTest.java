@@ -1,4 +1,6 @@
-import util.JdbcUtil;
+package jdbc.test;
+
+import jdbc.util.JdbcUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +10,7 @@ public class TransactionTest {
 
     public static void main(String[] args) {
 
-        account("Sean", "Tom", 100f);
+        account("张三", "李四", 100f);
     }
 
     private static void account(String receive, String pay, Float amount) {
@@ -34,8 +36,10 @@ public class TransactionTest {
 
             connection.commit();
             preparedStatement.close();
+            System.out.println("事务成功");
 
         } catch (Exception e) {
+            System.out.println("事务失败 已回滚");
             e.printStackTrace();
         }
     }

@@ -1,4 +1,6 @@
-import util.JdbcUtil;
+package jdbc.test;
+
+import jdbc.util.JdbcUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,15 +12,15 @@ public class PreparedTest {
     public static void main(String[] args) {
 
         System.out.println(">>>>>>>>> 常规查询 ");
-        System.out.println("-------- Statement ---------");
-        unsafeQuery("Tom");
-        System.out.println("-------- PreparedStatement ---------");
-        safeQuery("Tom");
+        System.out.println("Statement：");
+        unsafeQuery("张三");
+        System.out.println("PreparedStatement：");
+        safeQuery("张三");
 
         System.out.println("\n>>>>>>>>> SQL注入查询 ");
-        System.out.println("-------- Statement  ---------");
+        System.out.println("Statement：");
         unsafeQuery("xx' or '1'='1");
-        System.out.println("-------- PreparedStatement  ---------");
+        System.out.println("PreparedStatement：");
         safeQuery("'xx' or 1=1");
     }
 
