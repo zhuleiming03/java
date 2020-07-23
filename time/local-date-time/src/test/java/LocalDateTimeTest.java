@@ -1,11 +1,12 @@
-package test;
+import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class InitLocalDateTime {
+public class LocalDateTimeTest {
 
-    public static void main(String[] args){
+    @Test
+    public void initTest(){
 
         //当前时间
         LocalDateTime today = LocalDateTime.now();

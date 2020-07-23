@@ -1,25 +1,16 @@
-package test;
+import org.junit.Test;
 
-import service.WorkDayService;
-
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.Period;
+import java.time.*;
 
 import static java.time.temporal.TemporalAdjusters.nextOrSame;
 
-public class MathLocalDate {
-
-    public static void main(String[] args) {
-        between();
-        alter();
-        with();
-    }
+public class MathTest {
 
     /**
      * 日期差计算
      */
-    private static void between() {
+    @Test
+    public void between() {
         System.out.println("--- 日期差计算 ---");
         LocalDate date1 = LocalDate.of(2020, 3, 1);
         LocalDate date2 = LocalDate.of(2020, 1, 28);
@@ -29,25 +20,37 @@ public class MathLocalDate {
     }
 
     /**
+     * 时间差计算
+     */
+    @Test
+    public void betweenTime() {
+        System.out.println("--- 时间差计算 ---");
+        LocalTime time1 = LocalTime.of(12, 12, 31);
+        LocalTime time2 = LocalTime.of(12, 13, 12);
+        Duration timeSpace = Duration.between(time1, time2);
+        System.out.printf("【%s】和【%s】相差【%s】秒\n",
+                time1, time2, timeSpace.getSeconds());
+    }
+
+    /**
      * 年月日修改计算
      */
-    private static void alter() {
+    @Test
+    public void alter() {
         System.out.println("--- 加减计算 ---");
         LocalDate today = LocalDate.now();
-        System.out.printf("【%s】加一天：【%s】\n",
-                today, today.plusDays(1));
+        System.out.printf("【%s】加一天：【%s】\n", today, today.plusDays(1));
 
-        System.out.printf("【%s】减一月：【%s】\n",
-                today, today.minusMonths(1));
+        System.out.printf("【%s】减一月：【%s】\n", today, today.minusMonths(1));
 
-        System.out.printf("【%s】修改年：【%s】\n",
-                today, today.withYear(2008));
+        System.out.printf("【%s】修改年：【%s】\n", today, today.withYear(2008));
     }
 
     /**
      * 自定义时间逻辑计算
      */
-    private static void with() {
+    @Test
+    public void with() {
         System.out.println("--- 自定义时间逻辑计算 ---");
         // 获取最近的一个周五
         LocalDate friday = LocalDate.now().with(nextOrSame(DayOfWeek.FRIDAY));

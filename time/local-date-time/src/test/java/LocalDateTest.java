@@ -1,11 +1,12 @@
-package test;
+import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 
-public class IntiLocalDate {
+public class LocalDateTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void initTest(){
 
         // 当前时间
         LocalDate today = LocalDate.now();
@@ -34,5 +35,6 @@ public class IntiLocalDate {
         // 取当月天数
         int monthDay = today.lengthOfMonth();
         System.out.println(String.format(">>本月合计:%d 天", monthDay));
+
     }
 }

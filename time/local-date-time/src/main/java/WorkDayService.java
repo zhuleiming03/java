@@ -1,5 +1,3 @@
-package service;
-
 import java.time.DayOfWeek;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
