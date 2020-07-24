@@ -1,7 +1,6 @@
 package process;
 
 import org.junit.Test;
-import pojo.BillType;
 import repertory.BillRepertory;
 
 public class PeekTest {
