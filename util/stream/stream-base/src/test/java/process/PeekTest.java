@@ -12,7 +12,7 @@ public class PeekTest {
         System.out.println("------------- peek ------------");
 
         new BillRepertory().getBills().stream()
-                .peek(System.out::println)
-                .anyMatch(b -> BillType.OVERDUE.equals(b.getBillType()));
+                .peek(b -> b.setPeriods(b.getPeriods() * 10))
+                .forEach(System.out::println);
     }
 }

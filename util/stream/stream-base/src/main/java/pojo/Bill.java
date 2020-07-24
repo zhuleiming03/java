@@ -57,4 +57,8 @@ public class Bill {
     public LocalDate getDueDate() {
         return dueDate;
     }
+
+    public void setPeriods(Integer periods) {
+        this.periods = periods;
+    }
 }
