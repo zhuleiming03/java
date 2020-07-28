@@ -1,8 +1,10 @@
+package service;
+
 import java.util.function.Function;
 
-class MeasureService {
+public class MeasureService {
 
-    static String measureRead(Function<String, String> method, String url) {
+    public static String measureRead(Function<String, String> method, String url) {
 
         // 开始时刻
         long start = System.nanoTime();
