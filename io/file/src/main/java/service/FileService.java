@@ -18,7 +18,7 @@ public class FileService {
         File file = new File(filePath);
         if (file.isFile() && file.exists()) {
             try (FileInputStream fileInputStream = new FileInputStream(file);
-                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();) {
+                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
                 int index;
                 byte[] byteBlock = new byte[BYTE_SIZE];
                 while ((index = fileInputStream.read(byteBlock)) != -1) {
@@ -43,10 +43,10 @@ public class FileService {
         File file = new File(filePath);
         if (file.isFile() && file.exists()) {
             try (FileInputStream fileInputStream = new FileInputStream(file);
-                 InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, CHAR_SET_NAME);) {
+                 InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, CHAR_SET_NAME)) {
 
                 StringBuilder stringBuilder = new StringBuilder();
-                int index = 0;
+                int index;
                 while (-1 != (index = inputStreamReader.read())) {
                     stringBuilder.append((char) index);
                 }
@@ -70,10 +70,10 @@ public class FileService {
         if (file.isFile() && file.exists()) {
             try (FileInputStream fileInputStream = new FileInputStream(file);
                  InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);) {
+                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
 
                 StringBuilder stringBuilder = new StringBuilder();
-                String text = null;
+                String text;
                 while ((text = bufferedReader.readLine()) != null) {
                     stringBuilder.append(text).append("\n");
                 }
@@ -110,8 +110,6 @@ public class FileService {
             bufferedOutputStream.write(content);
             bufferedOutputStream.flush();
             return true;
-        } catch (Exception e) {
-            throw e;
         }
     }
 
@@ -151,8 +149,6 @@ public class FileService {
             outputStreamWriter.write(content);
             outputStreamWriter.flush();
             return true;
-        } catch (Exception e) {
-            throw e;
         }
     }
 
@@ -193,8 +189,6 @@ public class FileService {
             bufferedWriter.write(content);
             bufferedWriter.flush();
             return true;
-        } catch (Exception e) {
-            throw e;
         }
     }
 
@@ -219,8 +213,6 @@ public class FileService {
             fileWriter.write(content);
             fileWriter.flush();
             return true;
-        } catch (Exception e) {
-            throw e;
         }
     }
 

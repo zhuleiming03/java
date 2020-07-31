@@ -8,7 +8,7 @@ import java.io.IOException;
 public class ReadTest {
 
     @Test
-    public void readTxt() throws IOException {
+    public void read() throws IOException {
 
         // 获取文件路径
         String resourcesPath = String.format("%s\\src\\main\\resources\\read\\",

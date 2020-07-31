@@ -5,13 +5,13 @@ import java.util.function.Function;
 
 public class MeasureService {
 
-    public static String measureRead(Function<String, String> method, String url) {
+    public static <R> R measureRead(Function<String, R> method, String url) {
 
         // 开始时刻
         long start = System.nanoTime();
 
         // 执行方法
-        String result = method.apply(url);
+        R result = method.apply(url);
 
         // 耗时
         long duration = (System.nanoTime() - start) / 1_000;
