@@ -1,6 +1,5 @@
 import org.junit.Test;
 import repertory.WriteContextRepertory;
-import service.AbstractTimeToolService;
 import service.FileService;
 import service.MeasureService;
 
@@ -23,7 +22,6 @@ public class WriteTest {
         // OutputStreamWriter 其次
         // BufferedWriter 高 优先
         // OutputStreamWriter.FileWriter 高 缺点 不能指定编码方式
-        AbstractTimeToolService service;
 
         System.out.println("FileOutputStream：通过字节写入数据");
         MeasureService.measureWrite(FileService::writeFileByFileOutputStream,resourcesPath,
