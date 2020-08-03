@@ -1,16 +1,33 @@
 import org.junit.Test;
 import pojo.Apple;
-import service.FunctionService;
+import pojo.ColorEnums;
+import repertory.ApplyRepertory;
+import service.InvokingFunctionService;
 
 public class FunctionTest {
 
     @Test
-    public void baseTest(){
+    public void applyTest() {
 
-        Apple apple=new Apple(10f,"red");
+        System.out.println("Apple 重量：" +
+                InvokingFunctionService.apply(ApplyRepertory.getDefault(),
+                        Apple::getWeight));
+    }
 
-        System.out.println("101 是否能被3整除： " +
-                FunctionService.test(apple, apple1 -> apple.getColor()));
+    @Test
+    public void composeTest() {
+
+        System.out.println("Apple 颜色：" +
+                InvokingFunctionService.compose(ApplyRepertory.getDefault(),
+                        Apple::getColor, ColorEnums::getValueByKey));
+    }
+
+    @Test
+    public void andThenTest() {
+
+        System.out.println("Apple 颜色：" +
+                InvokingFunctionService.andThen(ApplyRepertory.getDefault(),
+                        Apple::getColor, ColorEnums::getValueByKey));
     }
 
 }

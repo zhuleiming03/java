@@ -12,15 +12,7 @@ public class ApplyRepertory {
      *
      * @return
      */
-    public static List<Apple> getApples() {
-
-        List<Apple> apples = new LinkedList<>();
-
-        apples.add(new Apple(12.4f, "red"));
-        apples.add(new Apple(11.6f, "pink"));
-        apples.add(new Apple(13.2f, "green"));
-        apples.add(new Apple(15.1f, "red"));
-
-        return apples;
+    public static Apple getDefault() {
+        return new Apple(12.4f, "red");
     }
 }
