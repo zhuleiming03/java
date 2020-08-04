@@ -1,4 +1,3 @@
-import org.apache.commons.lang3.time.StopWatch;
 import org.junit.Test;
 import pojo.User;
 
@@ -6,14 +5,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class CapacityTest {
 
-    private final static int MAX_COUNT = 100000;
+    private final static int MAX_COUNT = 10000;
 
     @Test
-    public void bastTest(){
+    public void bastTest() {
 
         List<Integer> idsList = new LinkedList<>();
         List<User> userList = new LinkedList<>();
@@ -42,7 +40,7 @@ public class CapacityTest {
         System.out.println("user Map count:" + userMap.size());
 
 
-        StopWatch stopwatch = StopWatch.createStarted();
+        long start = System.nanoTime();
         for (Integer id : idsList) {
             for (User po : userList) {
                 if (id.equals(po.getUserId())) {
@@ -50,13 +48,12 @@ public class CapacityTest {
                 }
             }
         }
-        stopwatch.stop();
+        long duration = (System.nanoTime() - start) / 1_000_000;
 
-        System.out.println(String.format("userNameList count:%d,耗时：%s",
-                userNameList.size(), stopwatch.getTime(TimeUnit.MILLISECONDS)));
+        System.out.println(String.format("userNameList count:%d,耗时：%s 毫秒",
+                userNameList.size(), duration));
 
-        stopwatch.reset();
-        stopwatch.start();
+        start = System.nanoTime();
         for (Integer id : idsMap.keySet()) {
             for (Map.Entry<Integer, User> po : userMap.entrySet()) {
                 if (id.equals(po.getKey())) {
@@ -64,8 +61,8 @@ public class CapacityTest {
                 }
             }
         }
-        stopwatch.stop();
-        System.out.println(String.format("userNameMap count:%d,耗时：%s",
-                userNameMap.size(), stopwatch.getTime(TimeUnit.MILLISECONDS)));
+        duration = (System.nanoTime() - start) / 1_000_000;
+        System.out.println(String.format("userNameMap count:%d,耗时：%s 毫秒",
+                userNameMap.size(), duration));
     }
 }
