@@ -4,6 +4,9 @@ import pojo.ColorEnums;
 import repertory.ApplyRepertory;
 import service.InvokingFunctionService;
 
+/**
+ * 接受一个输入参数，返回一个结果。
+ */
 public class FunctionTest {
 
     @Test

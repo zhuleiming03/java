@@ -1,6 +1,9 @@
 import org.junit.Test;
 import service.InvokingCustomService;
 
+/**
+ * 自定义方法
+ */
 public class CustomTest {
 
     @Test

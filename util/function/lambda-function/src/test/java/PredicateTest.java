@@ -2,7 +2,9 @@ import org.junit.Test;
 import repertory.ApplyRepertory;
 import service.InvokingPredicateService;
 
-
+/**
+ * 接受一个输入参数，返回一个布尔值结果。
+ */
 public class PredicateTest {
 
     @Test
