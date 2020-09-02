@@ -36,4 +36,11 @@ public class baseTest {
         BigDecimal op2 = new BigDecimal(51.1f);
         System.out.printf("%s %% %s = %s", op1, op2, op1.divide(op2, 2));
     }
+
+    @Test
+    public void compare() {
+        BigDecimal op1 = new BigDecimal(10.56f);
+        BigDecimal op2 = new BigDecimal(51.1f);
+        System.out.printf("%s > %s : %s", op2, op1, op2.compareTo(op1) > 0);
+    }
 }
