@@ -43,11 +43,5 @@ public class LocalDateTimeTest {
         // 转成 String 格式
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         System.out.println(">>字符串 格式:" + formatter.format(today));
-
-        // 转成 Date 格式
-        ZonedDateTime zonedDateTime = today.atZone(ZoneId.systemDefault());
-        Date date = Date.from(zonedDateTime.toInstant());
-        System.out.println(">>Date 格式:" + date);
-
     }
 }
