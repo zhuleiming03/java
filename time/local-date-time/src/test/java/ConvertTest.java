@@ -25,12 +25,15 @@ public class ConvertTest {
     public void LocalDateTimeAndTimestampTest() {
 
         // LocalDateTime to Timestamp
-        System.out.println("LocalDateTime to Timestamp:" +
-                LocalDateTime.now().toInstant(ZoneOffset.ofHours(8)).toEpochMilli());
+        long timestamp = LocalDateTime.now().toInstant(ZoneOffset.ofHours(8)).toEpochMilli();
+        System.out.println("LocalDateTime to Timestamp:" + timestamp);
 
         // Timestamp to LocalDateTime
+        long second = timestamp / 1000;
         System.out.println("Timestamp to LocalDateTime:" +
-                LocalDateTime.ofInstant(Instant.ofEpochMilli(System.currentTimeMillis()), ZoneId.systemDefault()));
+                LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault()));
+        System.out.println("Timestamp to LocalDateTime:" +
+                LocalDateTime.ofInstant(Instant.ofEpochSecond(second), ZoneId.systemDefault()));
     }
 
     @Test
