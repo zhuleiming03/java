@@ -5,6 +5,10 @@ import thread.Cattle;
 
 import java.time.LocalTime;
 
+/**
+ * 通过实现接口 Runnable 定义一个线程
+ * 该线程可实现多继承
+ */
 public class RunnableTest {
 
     @Test
@@ -27,7 +31,7 @@ public class RunnableTest {
     }
 
     @Test
-    public void multiInstance () {
+    public void multiInstance() {
 
         // 1 创建多个实例
         Cattle cattle = new Cattle();

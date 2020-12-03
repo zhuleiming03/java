@@ -6,6 +6,10 @@ import java.time.LocalTime;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 通过实现接口 Callable<Integer> 定义一个线程
+ * 该线程可返回执行结果
+ */
 public class CallableTest {
 
     @Test

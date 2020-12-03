@@ -4,6 +4,9 @@ import thread.Dog;
 
 import java.time.LocalTime;
 
+/**
+ * 通过继承 Thread 定义一个线程
+ */
 public class ThreadTest {
 
     @Test
