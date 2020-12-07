@@ -26,6 +26,6 @@ public class YieldTest {
         one.start();
         two.start();
 
-        Utils.delay(2L);
+        Utils.delay(1L);
     }
 }

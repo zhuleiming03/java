@@ -18,8 +18,6 @@ public class StartTest {
 
         // start 创建子线程 再执行
         instance.start();
-
-        Utils.delay(3L);
     }
 
     @Test
@@ -31,6 +29,6 @@ public class StartTest {
         rabbit.start();
         tortoise.start();
 
-        Utils.delay(3L);
+        Utils.delay(1L);
     }
 }
