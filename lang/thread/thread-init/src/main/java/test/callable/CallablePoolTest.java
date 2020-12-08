@@ -6,6 +6,10 @@ import thread.Bird;
 import java.time.LocalTime;
 import java.util.concurrent.*;
 
+/**
+ * 通过实现接口 Callable<Integer> 定义一个线程
+ * 通常线程池来执行该线程
+ */
 public class CallablePoolTest {
 
     public static void main(String[] args) {
