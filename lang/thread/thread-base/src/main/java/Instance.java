@@ -1,7 +1,7 @@
 import java.time.LocalTime;
 
 /**
- * 系列顺序
+ * Thread 系列
  * thread-init
  * thread-pool
  * thread-method
