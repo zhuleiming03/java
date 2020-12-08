@@ -1,5 +1,11 @@
 import java.time.LocalTime;
 
+/**
+ * 系列顺序
+ * thread-init
+ * thread-pool
+ * thread-method
+ */
 public class Instance {
 
     public static void main(String[] args) {
