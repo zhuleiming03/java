@@ -1,23 +1,21 @@
-import common.Utils;
-import org.junit.Test;
-import thread.Dog;
+package test;
 
-import java.time.LocalTime;
+import common.Utils;
+import thread.Dog;
 
 /**
  * 通过继承 Thread 定义一个线程
  */
 public class ThreadTest {
 
-    @Test
-    public void base() {
+    public static void main(String[] args) {
 
         // 1 创建实例
         Dog dog = new Dog();
 
         // 2 启动实例
-        System.out.println(LocalTime.now() + " : 启动一个子线程");
         dog.start();
+        System.out.println("启动一个子线程");
 
         // 3 主线程同时工作
         for (int i = 0; i < COUNT; i++) {

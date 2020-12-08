@@ -1,5 +1,6 @@
+package test.callable;
+
 import common.Utils;
-import org.junit.Test;
 import thread.Bird;
 
 import java.time.LocalTime;
@@ -12,8 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class CallableTest {
 
-    @Test
-    public void base() throws Exception {
+    public static void main(String[] args) {
 
         // 1 创建实例
         Bird bird = new Bird();
@@ -31,8 +31,12 @@ public class CallableTest {
         }
 
         // 4 返回子线程的结果
-        System.out.println(String.format("%s [son] 执行结果： %s", LocalTime.now(),
-                futureTask.get(3, TimeUnit.SECONDS)));
+        try {
+            System.out.println(String.format("%s [son] 执行结果： %s", LocalTime.now(),
+                    futureTask.get(3, TimeUnit.SECONDS)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static final Integer COUNT = 3;

@@ -16,5 +16,5 @@ public class Bird implements Callable<Integer> {
         return COUNT;
     }
 
-    private static final Integer COUNT = 10;
+    private static final Integer COUNT = 7;
 }
