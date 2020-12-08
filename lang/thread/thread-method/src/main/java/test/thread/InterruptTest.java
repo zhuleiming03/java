@@ -9,7 +9,7 @@ import java.time.LocalTime;
  */
 public class InterruptTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println(LocalTime.now() + " : 主线程开始");
 

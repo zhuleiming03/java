@@ -7,7 +7,7 @@ import common.Utils;
  */
 public class YieldTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Thread instance = new Thread(() -> {
             for (int i = 0; i <= 49; i++) {
                 if (i % 10 == 0) {

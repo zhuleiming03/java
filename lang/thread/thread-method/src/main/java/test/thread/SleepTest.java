@@ -3,11 +3,12 @@ package test.thread;
 import java.time.LocalTime;
 
 /**
- * 使线程休眠指定时间
+ * Thread.sleep(long)
+ * 线程休眠指定时间
  */
 public class SleepTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println(LocalTime.now() + " : 主线程开始");
 

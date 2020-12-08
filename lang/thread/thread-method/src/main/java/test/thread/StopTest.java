@@ -5,7 +5,7 @@ import thread.StopInstance;
 
 public class StopTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // 创建线程
         StopInstance stopInstance = new StopInstance();

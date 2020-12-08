@@ -1,13 +1,17 @@
 package test.thread;
 
-import common.Utils;
-
 /**
+ * thread.setPriority(priority)
+ * 设置线程的优先级
+ * <p>
+ * thread.getPriority()
+ * 获取线程的优先级
+ * <p>
  * 优先级可设置 仅供参考 实际不一定能优先级高的先执行
  */
 public class PriorityTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Runnable instance = () -> System.out.println(String.format("[%s]->[%s]",
                 Thread.currentThread().getName(), Thread.currentThread().getPriority()));
@@ -24,7 +28,5 @@ public class PriorityTest {
         six.start();
         two.start();
         one.start();
-
-        Utils.delay(1L);
     }
 }
