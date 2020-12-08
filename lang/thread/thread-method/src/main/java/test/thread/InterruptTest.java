@@ -1,5 +1,6 @@
+package test.thread;
+
 import common.Utils;
-import org.junit.Test;
 
 import java.time.LocalTime;
 
@@ -8,8 +9,7 @@ import java.time.LocalTime;
  */
 public class InterruptTest {
 
-    @Test
-    public void baseTest() {
+    public static void main(String[] args){
 
         System.out.println(LocalTime.now() + " : 主线程开始");
 

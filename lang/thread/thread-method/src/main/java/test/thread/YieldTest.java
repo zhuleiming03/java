@@ -1,14 +1,13 @@
+package test.thread;
+
 import common.Utils;
-import org.junit.Test;
 
 /**
  * 使线程暂停并重新开始竞争CPU
  */
 public class YieldTest {
 
-    @Test
-    public void baseTest() {
-
+    public static void main(String[] args){
         Thread instance = new Thread(() -> {
             for (int i = 0; i <= 49; i++) {
                 if (i % 10 == 0) {

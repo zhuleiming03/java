@@ -1,13 +1,13 @@
-import common.Utils;
-import org.junit.Test;
+package test.thread;
 
+import common.Utils;
+
+/**
+ * 优先级可设置 仅供参考 实际不一定能优先级高的先执行
+ */
 public class PriorityTest {
 
-    /**
-     * 优先级可设置 仅供参考 实际不一定能优先级高的先执行
-     */
-    @Test
-    public void baseTest() {
+    public static void main(String[] args){
 
         Runnable instance = () -> System.out.println(String.format("[%s]->[%s]",
                 Thread.currentThread().getName(), Thread.currentThread().getPriority()));
