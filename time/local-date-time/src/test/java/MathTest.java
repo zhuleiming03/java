@@ -19,6 +19,9 @@ public class MathTest {
         System.out.printf("【%s】和【%s】相差【%s】年【%s】月【%s】天\n",
                 date1, date2, period.getYears(), period.getMonths(), period.getDays());
 
+        LocalDate date3 = LocalDate.of(2021, 4, 10);
+        System.out.printf("【%s】和当天相差【%s】天\n", date3, date3.toEpochDay() - LocalDate.now().toEpochDay());
+
         System.out.println("--- 时间差计算 ---");
         LocalTime time1 = LocalTime.of(12, 12, 31);
         LocalTime time2 = LocalTime.of(12, 13, 12);
