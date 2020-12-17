@@ -11,7 +11,7 @@ public class ObjectTest {
      **/
     public static void main(String[] args) throws InterruptedException {
         //通过关键字synchronized和Object的方法wait()/notify()/notifyAll()实现线程等待与唤醒
-        //通过object.wait()，使得对象线程进行入等待唤醒状态，并是否对象上的锁
+        //通过object.wait()，使得对象线程进行入等待唤醒状态，并释放对象上的锁
         //通过object.notify()/object.notifyALL()，唤醒此对象上等待的线程，并获得对象上的锁
         //wait()/notify()/notifyAll()必须在synchronized中使用
         new Kitchen().start();
