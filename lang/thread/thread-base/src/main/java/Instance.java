@@ -5,6 +5,7 @@ import java.time.LocalTime;
  * thread-init
  * thread-pool
  * thread-method
+ * thread-multi
  */
 public class Instance {
 
