@@ -1,12 +1,28 @@
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class baseTest {
 
     @Test
     public void init() {
-        System.out.println(new BigDecimal(10.11f));
+        System.out.println(new BigDecimal(10.115));
+        System.out.println(new BigDecimal(10.115).setScale(2, BigDecimal.ROUND_HALF_UP).floatValue());
+    }
+
+    @Test
+    public void string() {
+        BigDecimal source = new BigDecimal(10880000.112);
+        System.out.println(source);
+        System.out.println(source.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue());
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,##0.00");
+        System.out.println(decimalFormat.format(source));
+
+        System.out.println(new DecimalFormat("###,###.##").format(0.8));
+        System.out.println(new DecimalFormat("###,###.00").format(0.8));
+        System.out.println(new DecimalFormat("###,##0.00").format(0.8));
+        System.out.println(new DecimalFormat("000,000.00").format(0.8));
     }
 
     @Test
