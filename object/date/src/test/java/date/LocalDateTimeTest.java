@@ -48,5 +48,11 @@ public class LocalDateTimeTest {
         LocalTime localTime = today.toLocalTime();
         System.out.println("LocalDateTime -> localTime :" + localTime);
         System.out.println("localTime -> LocalDateTime :" + localTime.atDate(LocalDate.now()));
+        System.out.println();
+
+        // timestamp
+        long timestamp = LocalDateTime.now().toInstant(ZoneOffset.ofHours(8)).toEpochMilli();
+        System.out.println("LocalDateTime -> Timestamp :" + timestamp);
+        System.out.println("Timestamp -> LocalDateTime :" + LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault()));
     }
 }

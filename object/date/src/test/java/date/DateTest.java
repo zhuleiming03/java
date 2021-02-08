@@ -2,6 +2,8 @@ package date;
 
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.Date;
 
@@ -15,11 +17,16 @@ public class DateTest {
     }
 
     @Test
-    public void convertTest() {
+    public void convertTest() throws ParseException {
 
         Date date = new Date();
 
         // String
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+        String string = formatter.format(date);
+        System.out.println("Date -> string :" + string);
+        System.out.println("string -> Date :" + formatter.parse(string));
+        System.out.println();
 
         // LocalDate
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -37,28 +44,11 @@ public class DateTest {
         LocalTime localTime = date.toInstant().atZone(ZoneId.systemDefault()).toLocalTime();
         System.out.println("Date -> LocalTime :" + localTime);
         System.out.println("LocalTime -> Date :" + Date.from(localTime.atDate(LocalDate.now()).atZone(ZoneId.systemDefault()).toInstant()));
-    }
+        System.out.println();
 
-    @Test
-    public void timestampTest(){
-
+        // timestamp
         long timestamp = new Date().getTime();
-
-        // Date to Timestamp
-        System.out.println("Date to Timestamp:" + timestamp);
-
-        // Timestamp to Date
-        System.out.println("Timestamp to Date:" + new Date(timestamp));
-
-//        // LocalDateTime to Timestamp
-//        long timestamp = LocalDateTime.now().toInstant(ZoneOffset.ofHours(8)).toEpochMilli();
-//        System.out.println("LocalDateTime to Timestamp:" + timestamp);
-//
-//        // Timestamp to LocalDateTime
-//        long second = timestamp / 1000;
-//        System.out.println("Timestamp to LocalDateTime:" +
-//                LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault()));
-//        System.out.println("Timestamp to LocalDateTime:" +
-//                LocalDateTime.ofInstant(Instant.ofEpochSecond(second), ZoneId.systemDefault()));
+        System.out.println("Date -> Timestamp :" + timestamp);
+        System.out.println("Timestamp -> Date :" + new Date(timestamp));
     }
 }
