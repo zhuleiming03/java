@@ -1,6 +1,6 @@
-package multi.test;
+package multi;
 
-public class IndexTest {
+public class Index {
 
     // 并发三特性引发问题
     // 原子性(Atomicity)    引发修改值操作被覆盖问题 -> AtomicityIssueTest
