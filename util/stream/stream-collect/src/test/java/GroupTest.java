@@ -8,8 +8,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.partitioningBy;
+import static java.util.stream.Collectors.*;
 
 public class GroupTest {
 
@@ -85,6 +84,23 @@ public class GroupTest {
 
         collect.forEach((k, v) -> {
             System.out.printf("Bill type: %s  \n", k);
+            v.forEach(System.out::println);
+        });
+    }
+
+    /**
+     * 根据指定字段分组后显示指定字段
+     */
+    @Test
+    public void groupToField() {
+
+        List<Bill> bills = new BillRepertory().getDefault();
+
+        Map<Integer, List<BillType>> collect = bills.stream()
+                .collect(groupingBy(Bill::getPeriods, mapping(Bill::getBillType, toList())));
+
+        collect.forEach((k, v) -> {
+            System.out.printf("Bill period: %s  \n", k);
             v.forEach(System.out::println);
         });
     }
