@@ -11,4 +11,20 @@ public class EnumTest {
         System.out.println(">>" + GenderEnum.valueOf("MALE"));
         System.out.println(">>" + GenderEnum.MALE.getValueByCode(1));
     }
+
+    @Test
+    public void switchTest() {
+        GenderEnum genderEnum = GenderEnum.MALE;
+        switch (genderEnum) {
+            case MALE:
+                System.out.println(genderEnum.getName());
+                break;
+            case FEMALE:
+                System.out.println(genderEnum.getName());
+                break;
+            default:
+                System.out.println(GenderEnum.MALE.getName());
+                break;
+        }
+    }
 }
